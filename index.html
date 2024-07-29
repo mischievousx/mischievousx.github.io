@@ -7,27 +7,29 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: row;
         }
-        header {
+        .sidebar {
+            width: 250px;
             background-color: #333;
             color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
             padding: 1rem;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
-        nav a {
+        .sidebar a {
             color: #fff;
-            margin: 0 1rem;
+            display: block;
+            margin: 1rem 0;
             text-decoration: none;
         }
-        .container {
+        .main-content {
+            flex: 1;
             padding: 2rem;
+            background-color: #f4f4f4;
         }
         .post {
             background-color: #fff;
@@ -36,38 +38,80 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        header {
+            background-color: #444;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
-            position: absolute;
+            padding: 1rem;
+            position: fixed;
             bottom: 0;
-            width: 100%;
+            width: calc(100% - 250px);
+            left: 250px;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>黎子龙的个人博客</h1>
-    </header>
-    <nav>
-        <a href="#home">主页</a>
-        <a href="#about">关于我</a>
-        <a href="#contact">联系</a>
-    </nav>
-    <div class="container">
-        <section class="post">
-            <h2>欢迎来到我的博客</h2>
-            <p>你好！我是黎子龙，欢迎来到我的个人博客。在这里，我将分享我的学习和项目经验，包括电子信息工程、图像处理等方面的内容。</p>
-        </section>
-        <section class="post">
-            <h2>最新文章</h2>
-            <p>在这里，你可以找到我最新的文章和项目更新。敬请期待更多内容！</p>
-        </section>
+    <div class="sidebar">
+        <header>
+            <h1>黎子龙的博客</h1>
+        </header>
+        <nav>
+            <a href="#" onclick="showSection('home')">主页</a>
+            <a href="#" onclick="showSection('about')">关于我</a>
+            <a href="#" onclick="showSection('contact')">联系</a>
+        </nav>
+    </div>
+    <div class="main-content">
+        <div id="home" class="content-section active">
+            <section class="post">
+                <h2>欢迎来到我的博客</h2>
+                <p>你好！我是黎子龙，欢迎来到我的个人博客。在这里，我将分享我的学习和项目经验，包括电子信息工程、图像处理等方面的内容。</p>
+            </section>
+            <section class="post">
+                <h2>最新文章</h2>
+                <p>在这里，你可以找到我最新的文章和项目更新。敬请期待更多内容！</p>
+            </section>
+        </div>
+        <div id="about" class="content-section">
+            <section class="post">
+                <h2>关于我</h2>
+                <p>这里是关于我的信息。我是黎子龙，一个电子信息工程专业的学生。</p>
+            </section>
+        </div>
+        <div id="contact" class="content-section">
+            <section class="post">
+                <h2>联系我</h2>
+                <p>你可以通过以下方式联系我：<br>Email: example@example.com<br>微信: wechatID</p>
+            </section>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 黎子龙的个人博客. 版权所有.</p>
     </footer>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+        }
+    </script>
 </body>
 </html>
