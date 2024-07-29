@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mischievous Li的个人博客</title>
+    <title>黎子龙的个人博客</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,10 +24,16 @@
             align-items: center;
         }
         .sidebar img {
-            width: 100px; /* 你可以根据需要调整图片的宽度 */
-            height: 100px; /* 你可以根据需要调整图片的高度 */
-            border-radius: 50%; /* 使图片变圆形 */
+            max-width: 100px; /* 最大宽度 */
+            max-height: 100px; /* 最大高度 */
+            width: auto; /* 保持原始宽高比例 */
+            height: auto; /* 保持原始宽高比例 */
+            border-radius: 50%; /* 圆形图片 */
+            object-fit: cover; /* 保持图片比例并填充容器 */
             margin-bottom: 1rem; /* 图片与下方内容的间隔 */
+        }
+        .sidebar h1 {
+            margin-top: 0.5rem;
         }
         .sidebar a {
             color: #fff;
@@ -75,7 +81,7 @@
 <body>
     <div class="sidebar">
         <header>
-            <img src="img1.jpg" alt="个人照片">
+            <img src="img1.jpg" alt="个人照片"> <!-- 添加个人照片 -->
             <h1>黎子龙的博客</h1>
         </header>
         <nav>
@@ -88,7 +94,7 @@
         <div id="home" class="content-section active">
             <section class="post">
                 <h2>欢迎来到我的博客</h2>
-                <p>你好！我是Mischievous Li，欢迎来到我的个人博客。在这里，我将分享我的学习和项目经验，包括电子信息工程、图像处理等方面的内容。</p>
+                <p>你好！我是黎子龙，欢迎来到我的个人博客。在这里，我将分享我的学习和项目经验，包括电子信息工程、图像处理等方面的内容。</p>
             </section>
             <section class="post">
                 <h2>最新文章</h2>
@@ -98,22 +104,22 @@
         <div id="about" class="content-section">
             <section class="post">
                 <h2>关于我</h2>
-                <p>你好！我是一个电子信息工程专业的学生。在这里，我将介绍我的个人背景和一些相关信息。</p>
+                <p>你好！我是黎子龙，一个电子信息工程专业的学生。在这里，我将介绍我的个人背景和一些相关信息。</p>
                 <h3>学历信息</h3>
-                <p>我目前正在攻读电子信息工程学士学位，预计2025年毕业。在学习过程中，我专注于图像处理、信号处理等领域的知识。</p>
+                <p>我目前正在攻读电子信息工程学士学位，预计2024年毕业。在学习过程中，我专注于图像处理、信号处理等领域的知识。</p>
                 <p><a href="cv.pdf" target="_blank">查看我的CV</a></p>
+                <p>你可以在我的 <a href="https://github.com/your-github-username" target="_blank">GitHub 主页</a> 上查看我的项目和代码。</p>
             </section>
         </div>
         <div id="contact" class="content-section">
             <section class="post">
                 <h2>联系我</h2>
-                <p>你可以通过以下方式联系我：<br>Email: leoj31406@gmail.com<br>微信: _17307607079</p>
-                <p>你可以在我的 <a href="https://github.com/mischievousx" target="_blank">GitHub 主页</a> 上查看我的项目和代码。</p>
+                <p>你可以通过以下方式联系我：<br>Email: example@example.com<br>微信: wechatID</p>
             </section>
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Mischievous Li的个人博客. 版权所有.</p>
+        <p>&copy; 2024 黎子龙的个人博客. 版权所有.</p>
     </footer>
     <script>
         function showSection(sectionId) {
