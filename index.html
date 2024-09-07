@@ -53,6 +53,48 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .project-card {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card img {
+            width: 150px; /* 图片宽度 */
+            height: 100px; /* 图片高度 */
+            object-fit: cover; /* 保持图片比例并填充框架 */
+            border-radius: 5px;
+            margin-right: 1rem; /* 图片与文本的间隔 */
+        }
+
+        .project-content {
+            flex: 1; /* 占据剩余空间 */
+            display: flex;
+            flex-direction: column; /* 使标题和简介垂直排列 */
+        }
+
+        .project-content h3 {
+            margin: 0 0 0.5rem 0; /* 标题与简介的间隔 */
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .project-content p {
+            margin: 0;
+            color: #666;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
         header {
             background-color: #444;
             color: #fff;
@@ -97,8 +139,17 @@
                 <p>你好！我是Mischievous Li，欢迎来到我的个人博客。在这里，我将分享我的学习和项目经验，包括电子信息工程、图像处理等方面的内容。</p>
             </section>
             <section class="post">
-                <h2>最新文章</h2>
+                <h2>最新文章和项目</h2>
                 <p>在这里，你可以找到我最新的文章和项目更新。敬请期待更多内容！</p>
+                <!-- 项目展示部分 -->
+                <div class="project-card" onclick="window.location.href='https://github.com/mischievousx/Self-balance-bicycles';">
+                    <img src="Object.jpg" alt="项目1">
+                    <div class="project-content">
+                        <h3>项目名称 1</h3>
+                        <p>这是项目1的简要介绍。它展示了项目的关键功能和亮点。</p>
+                    </div>
+                </div>
+                <!-- 可根据需要添加更多项目 -->
             </section>
         </div>
         <div id="about" class="content-section">
@@ -114,7 +165,7 @@
         <div id="contact" class="content-section">
             <section class="post">
                 <h2>联系我</h2>
-                <p>你可以通过以下方式联系我：<br>Email: example@example.com<br>微信: wechatID</p>
+                <p>你可以通过以下方式联系我：<br>Email: leoj31406@gmail.com</p>
             </section>
         </div>
     </div>
