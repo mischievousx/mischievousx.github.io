@@ -80,15 +80,25 @@
             flex-direction: column; /* 使标题和简介垂直排列 */
         }
 
-        .project-content h3 {
-            margin: 0 0 0.5rem 0; /* 标题与简介的间隔 */
-            font-size: 1.2rem;
-            color: #333;
+        .project-buttons {
+            display: flex;
+            flex-direction: column; /* 使按钮上下排列 */
+            gap: 0.5rem; /* 按钮之间的间隔 */
+            margin-left: 1rem; /* 按钮与文本的间隔 */
         }
 
-        .project-content p {
-            margin: 0;
-            color: #666;
+        .project-buttons button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* 按钮背景颜色 */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .project-buttons button:hover {
+            background-color: #45a049; /* 按钮悬停时的背景颜色 */
         }
 
         .project-card:hover {
@@ -102,6 +112,7 @@
             text-align: center;
             margin-bottom: 1rem;
         }
+        
         footer {
             background-color: #333;
             color: #fff;
@@ -141,16 +152,22 @@
             <section class="post">
                 <h2>最新文章和项目</h2>
                 <p>在这里，你可以找到我最新的文章和项目更新。敬请期待更多内容！</p>
-                <!-- 项目展示部分 -->
-                <div class="project-card" onclick="window.location.href='https://github.com/mischievousx/Self-balance-bicycles';">
+                <!-- 修改的项目卡片部分 -->
+                <!-- 修改后的项目卡片部分 -->
+                <div class="project-card">
                     <img src="Object.jpg" alt="project_1">
                     <div class="project-content">
                         <h3>Self-balance-bicycles</h3>
                         <p class="project-time">2024-09-07</p>
-                        <br>
                         <p>The project is a self-balancing trolley project and the main control program is implemented mainly through STM32F103C8T6.</p>
                     </div>
+                    <!-- 添加按钮组并调整其位置 -->
+                    <div class="project-buttons">
+                        <button onclick="window.location.href='https://github.com/mischievousx/Self-balance-bicycles';">GitHub</button>
+                        <button onclick="window.location.href='https://yourblog.com/related-article';">演示视频</button>
+                    </div>
                 </div>
+
                 <!-- 可根据需要添加更多项目 -->
             </section>
         </div>
